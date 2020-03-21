@@ -36,3 +36,40 @@
         }
         /* code */
     }
+
+4.1 Loop(find all the )
+    This take half a second ,10^5 works fine .for this global declaration
+    //kickstart/19/g/bookreading
+    #define lim 1000000
+    vector<int> odata[lim];
+    for (int i = 1; i < lim; i++)
+    {
+        int div = 1;
+        int inc = 1;
+        while (true)
+        {
+            div = i * inc;
+            if (div > lim)
+            {
+                break;
+            }
+            else
+            {
+                odata[i].push_back(div);
+                inc++;
+            }
+        }
+    }
+
+5. String to unsigned long long and int and char to int
+    //kickstt 18 a evendigits
+    unsigned long long a1=stoull("12345678923456788", nullptr, 10);
+    int a='2'-'0';
+
+6. 2D Can search in a row but no helper function to find by column
+7. 2D vector sort by column find by column erase first element 
+    //main dijkasthra
+
+8. Array of vectors vector <int> A[5];
+
+9. memset memset(myarray, 0, sizeof(myarray));
