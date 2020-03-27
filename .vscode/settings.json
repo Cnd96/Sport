@@ -5,6 +5,11 @@
         "queue": "cpp",
         "xutility": "cpp",
         "ostream": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "algorithm": "cpp",
+        "iosfwd": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp",
+        "map": "cpp"
     }
 }

@@ -24,11 +24,11 @@ int main()
             }
             sumData.push_back(num);
         }
-        // for (int k = 0; k < sumData.size(); k++)
-        // {
-        //    cout<<sumData[k]<<endl;
-        // }
-        cout<<"ss "<<sumData.size();
+        for (int k = 0; k < sumData.size(); k++)
+        {
+           cout<<sumData[k]<<endl;
+        }
+        // cout<<"ss "<<sumData.size();
     }
     return 0;
 }

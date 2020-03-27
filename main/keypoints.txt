@@ -37,6 +37,13 @@
         /* code */
     }
 
+    okay near1 second
+    long long x=0;
+    for (unsigned long long  i = 0; i < 245035000; i++)
+    {
+        /* code */
+        x+=1;
+    }
 4.1 Loop(find all the )
     This take half a second ,10^5 works fine .for this global declaration
     //kickstart/19/g/bookreading
@@ -73,3 +80,10 @@
 8. Array of vectors vector <int> A[5];
 
 9. memset memset(myarray, 0, sizeof(myarray));
+
+
+10. check if string starts with
+    string s1="eedsvf"
+     if (s1.rfind("ee", 0) == 0)
+     {
+     }
