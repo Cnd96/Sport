@@ -34,7 +34,10 @@ int main()
                 currentDay++;
             }
             pData.erase(pData.begin());
+            /* code */
         }
+        
+        
 
         cout << "Case #" << tt << ": "<<totalConsumption<< "\n";
        
