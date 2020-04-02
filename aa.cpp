@@ -1,60 +1,41 @@
-#include <bits/stdc++.h>
-#define forn(i, n) for (int i = 0; i < (n); i++)
-#define err(...) fprintf(stderr,__VA_ARGS__)
+#include<bits/stdc++.h>
+#define ll long long
+#define mod 1000000007
+#define pb push_back
+#define fi first
+#define se second
+#define fr(i,s,e) for(i=s;i<e;i++)
+#define ms(arr,val) memset(arr,val,sizeof(arr))
 using namespace std;
-typedef long long ll;
-
-int a[30];
-int aa = 0;
-
-ll mem[33][2][10];
-
-ll go(int pos, int fl, int rem)
+const int mxn=1e5+1;
+int dp[100][100001],n;
+int arr[100];
+int func(int i,int sum)
 {
-    if (pos == -1)
-    {
-        if (rem == 0) return 0;
-        return 1;
-    }
-    if (mem[pos][fl][rem] != -1) return mem[pos][fl][rem];
-    ll &ans = mem[pos][fl][rem];
-    ans = 0;
-    for (int i = 0; i <= 8; i++)
-    {
-        if (fl == 1 && i > a[pos]) break;
-        ans += go(pos - 1, fl && i == a[pos], (rem * 10 + i) % 9);
-    }
-    return ans;
+    if(i<0)
+        return 0;
+   if(dp[i][sum]!=-1)
+       return dp[i][sum];
+    int ans=0;
+    if(sum<=6*arr[i])
+        ans=1+func(i-1,sum+arr[i]);
+    ans=max(ans,func(i-1,sum));
+    return dp[i][sum]=ans;
 }
-    
+int main(){
+//    freopen("A.in","r",stdin);
+//    freopen("sol.out","w",stdout);
+  int t=1,tt=1;
+  cin>>t;
+    while(t--){
+        ms(dp,-1);
+        int i;
+        cin>>n;
+        fr(i,0,n)
+        cin>>arr[i];
+        reverse(arr,arr+n);
 
-ll solve(ll x)
-{
-    aa = 0;
-    while (x)
-    {
-        a[aa++] = x % 10;
-        x /= 10;
+        cout<<"Case #"<<tt++<<": "<<func(n-1,0)<<"\n";
     }
-    memset(mem, -1, sizeof mem);
-    return go(aa - 1, 1, 0);
-}
-
-
-int main() {
-#ifdef amit_swami
-    freopen("in", "r", stdin);
-    freopen("out", "w", stdout);
-#endif
-    int tests;
-    scanf("%d", &tests);
-    forn(testid, tests)
-    {
-        ll l, r;
-        scanf("%lld%lld", &l, &r);
-        ll res = solve(r) - solve(l) + 1;
-        printf("Case #%d: %lld\n", testid + 1, res);
-    }
-
-    return 0;
-}
+  return 0;
+  }

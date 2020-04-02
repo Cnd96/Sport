@@ -56,7 +56,6 @@ int main()
                             pdata[j][1] = distance[currentNode] + graph[currentNode][i];
                             neighbour[i] = currentNode;
                         }
-
                         break;
                     }
                 }
